@@ -16,7 +16,11 @@ const config = {
         use: [
           'style-loader', 'css-loader', 'postcss-loader'
         ]
-      }
+      },
+      {
+        test: /\.(png|svg|jpg|jpeg|gif)$/i,
+        loader: 'url-loader'
+      },
     ]
   },
   plugins: [

@@ -13,7 +13,17 @@
     <div class="grid xl:grid-cols-3 xl:h-screen">
         <main class="p-8 bg-gradient-to-b from-[#000046] to-[#1CB5E0]">
             <div class="flex justify-between">
-                <input type="text" placeholder="Cari tempat" class="px-2 py-1 outline-none text-white placeholder-green-700">
+                <input type="text" placeholder="Cari tempat" class="px-4 py-2 text-xl outline-none text-white placeholder-white bg-gray-600 rounded-md">
+                <div class="flex items-center">
+                    <!-- Rounded switch -->
+                    <label class="inline-block relative w-16 h-9 mr-6 md:mr-20" title="Toggle Dark Mode">
+                        <input type="checkbox" class="opacity-0 w-0 h-0 peer" id="toggle-dark-mode" checked>
+                        <span class="absolute cursor-pointer inset-0 bg-[#d4d5e4] peer-focus:shadow-sm peer-checked:bg-[#505156] transition-all duration-300 before:absolute before:h-7 before:w-7 before:left-1 before:bottom-1 before:bg-gradient-to-r before:from-yellow-400 before:to-red-400 before:transition-all before:duration-500 peer-checked:before:translate-x-7 rounded-full before:rounded-full toogle-moon"></span>
+                    </label>
+                </div>
+            </div>
+            <div>
+                <img src="assets/images/Clear.png">
             </div>
         </main>
         <section class="grid-cols-2 p-8 xl:px-32">
