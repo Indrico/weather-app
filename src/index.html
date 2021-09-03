@@ -11,7 +11,7 @@
 </head>
 <body class="font-muli">
     <div class="grid xl:grid-cols-3 xl:h-screen">
-        <main class="p-8 bg-gradient-to-b from-[#000046] to-[#1CB5E0]">
+        <main class="p-8 bg-gradient-to-b from-[#000046] to-[#1CB5E0] xl:h-screen">
             <div class="flex justify-between">
                 <input type="text" placeholder="Cari tempat" class="px-4 py-2 text-xl outline-none text-white placeholder-white bg-gray-600 rounded-md">
                 <div class="flex items-center">
@@ -22,13 +22,28 @@
                     </label>
                 </div>
             </div>
-            <div class="flex justify-center items-center h-[30vh]">
+            <div class="flex justify-center items-center xl:h-[40vh] relative">
                 <img src="<%= require('./assets/images/Clear.png'). default %>">
+                <img src="<%= require('./assets/images/Cloud-Background-night.png'). default %>" class="mix-blend-soft-light absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 3xl:w-[36rem]">
+            </div>
+            <div class="flex justify-between items-center xl:h-[30vh] flex-col">
+                <p class="text-white mt-8 3xl:text-8xl font-bold">15°C</p>
+                <p class="text-white mt-8 3xl:text-5xl font-semibold">Cerah</p>
+            </div>
+            <div class="h-[20vh] flex flex-col justify-around items-center">
+                <div class="flex justify-between text-2xl text-white">
+                    <p>Jumat, 9 Agustus 2021</p>
+                </div>
+                <p class="text-2xl text-white medium flex justify-between items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 mr-4" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd" />
+                    </svg>
+                    Jakarta
+                </p>
             </div>
         </main>
         <section class="grid-cols-2 p-8 xl:px-32">
             <div class="">
-
             </div>
         </section>
     </div>
