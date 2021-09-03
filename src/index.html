@@ -24,7 +24,6 @@
             </div>
             <div class="flex justify-center items-center xl:h-[40vh] relative">
                 <img src="<%= require('./assets/images/Clear.png'). default %>">
-                <img src="<%= require('./assets/images/Cloud-Background-night.png'). default %>" class="mix-blend-soft-light absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 3xl:w-[36rem]">
             </div>
             <div class="flex justify-between items-center xl:h-[30vh] flex-col">
                 <p class="text-white mt-8 3xl:text-8xl font-bold">15°C</p>
@@ -42,8 +41,62 @@
                 </p>
             </div>
         </main>
-        <section class="grid-cols-2 p-8 xl:px-32">
-            <div class="">
+        <section class="col-span-2 p-8 xl:px-32 bg-[#100E1D]">
+            <div class="flex justify-end items-center font-bold">
+                <div class="text-[#100E1D] bg-[#e7e7e7] text-2xl w-16 h-16 rounded-full justify-center items-center flex mr-10">
+                    °C
+                </div>
+                <div class="text-[#e7e7e7] bg-[#585676] text-2xl w-16 h-16 rounded-full justify-center items-center flex">
+                    °F
+                </div>
+            </div>
+            <div class="grid grid-cols-5 gap-4 mt-12">
+                <div class="text-white bg-[#1E213A] p-4 flex justify-center items-center flex-col">
+                    <h3 class="text-2xl">Tomorrow</h3>
+                    <img src="<%= require('./assets/images/HeavyCloud.png'). default %>" class="w-36 h-36 mt-4 object-contain">
+                    <div class="flex justify-between w-full mt-4 px-6 text-xl">
+                        <p class="font-semibold">15°C</p>
+                        <p class="text-[#A09FB1]">10°C</p>
+                    </div>
+                </div>
+                <div class="text-white bg-[#1E213A] p-4 flex justify-center items-center flex-col">
+                    <h3 class="text-2xl">11 Sept</h3>
+                    <img src="<%= require('./assets/images/HeavyRain.png'). default %>" class="w-36 h-36 mt-4 object-contain">
+                    <div class="flex justify-between w-full mt-4 px-6 text-xl">
+                        <p class="font-semibold">20°C</p>
+                        <p class="text-[#A09FB1]">16°C</p>
+                    </div>
+                </div>
+                <div class="text-white bg-[#1E213A] p-4 flex justify-center items-center flex-col">
+                    <h3 class="text-2xl">12 Sept</h3>
+                    <img src="<%= require('./assets/images/LightCloud.png'). default %>" class="w-36 h-36 mt-4 object-contain">
+                    <div class="flex justify-between w-full mt-4 px-6 text-xl">
+                        <p class="font-semibold">15°C</p>
+                        <p class="text-[#A09FB1]">10°C</p>
+                    </div>
+                </div>
+                <div class="text-white bg-[#1E213A] p-4 flex justify-center items-center flex-col">
+                    <h3 class="text-2xl">13 Sept</h3>
+                    <img src="<%= require('./assets/images/LightRain.png'). default %>" class="w-36 h-36 mt-4 object-contain">
+                    <div class="flex justify-between w-full mt-4 px-6 text-xl">
+                        <p class="font-semibold">15°C</p>
+                        <p class="text-[#A09FB1]">10°C</p>
+                    </div>
+                </div>
+                <div class="text-white bg-[#1E213A] p-4 flex justify-center items-center flex-col">
+                    <h3 class="text-2xl">14 Sept</h3>
+                    <img src="<%= require('./assets/images/Thunderstorm.png'). default %>" class="w-36 h-36 mt-4 object-contain">
+                    <div class="flex justify-between w-full mt-4 px-6 text-xl">
+                        <p class="font-semibold">15°C</p>
+                        <p class="text-[#A09FB1]">10°C</p>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <h2>Status</h2>
+                <div>
+
+                </div>
             </div>
         </section>
     </div>
