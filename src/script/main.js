@@ -3,12 +3,16 @@ import "../Components/darkmode-toggle"
 import "../Components/main-content"
 import "../Components/desktop-status"
 import "../Components/forecast-list"
+import "../Components/units"
 import "regenerator-runtime";
-import getWeatherData from "./getWeather.js"
+import getWeatherData from "./getInitialWeatherData.js"
+import getWeatherForecast from "./getWeatherForecast.js"
+import getWeather from "./getWeather.js"
 
 const main = () => {
     const sideBarElement = document.querySelector('side-bar');
     const darkModeElement = document.querySelector('darkmode-toggle')
+    const unitsElement = document.querySelector('units-element');
 
     const sideBarClose = () => {
         const sidebar = document.querySelector('#sidebar');
@@ -35,10 +39,29 @@ const main = () => {
         body.classList.toggle('dark');
     }
 
+    const setMetric = () => {
+        sessionStorage.setItem("units", "metric");
+        getWeather("metric");
+        getWeatherForecast("metric");
+        document.querySelector('#metric').classList.add('active');
+        document.querySelector('#imperial').classList.remove('active');
+    }
+
+    const setImperial = () => {
+        sessionStorage.setItem("units", "imperial");
+        getWeather("imperial");
+        getWeatherForecast("imperial");
+        document.querySelector('#metric').classList.remove('active');
+        document.querySelector('#imperial').classList.add('active');
+    }
+
     sideBarElement.closeSideBar = sideBarClose;
     sideBarElement.searchLocation = searchLocation;
     
     darkModeElement.toggleDarkMode = darkModeToggle;
+
+    unitsElement.metric = setMetric;
+    unitsElement.imperial = setImperial;
 
     document.querySelector('#cari-tempat').addEventListener('click', sideBarOpen);
 
