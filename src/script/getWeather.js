@@ -4,6 +4,7 @@ import {renderWeatherData, renderWeatherError} from "./renderWeatherData";
 const getWeatherData = () => {
     const APP_KEY = "271b2d7bd990a7cc3c89e86b8260caf5";
     const BASE_URL = "https://api.openweathermap.org/data/2.5/";
+    const forecastListElement = document.querySelector("forecast-list");
 
     let latitude = "";
     let longitude = "";
@@ -31,14 +32,21 @@ const getWeatherData = () => {
 
     const getWeatherForecast = async () => {
         if (latitude != "" && longitude != "") {
-            let currentWeather = await axios.get(`${BASE_URL}/forecast?appid=${APP_KEY}&lat=${latitude}&lon=${longitude}&units=metric`)
-            renderWeatherForecast()
-            console.log("Menggunakan lokasi saat ini");
-            console.log(currentWeather);
+            try {
+                let currentForecast = await axios.get(`${BASE_URL}/forecast?appid=${APP_KEY}&lat=${latitude}&lon=${longitude}&units=metric`)
+                forecastListElement.forecasts = currentForecast.data.list;
+                console.log(currentForecast);
+            } catch (error) {
+                console.log(error)   
+            }
         } else {
-            let currentWeather = await axios.get(`${BASE_URL}/forecast?appid=${APP_KEY}&q=Tangerang&units=metric`)
-            console.log("Menggunakan lokasi Tangerang");
-            console.log(currentWeather);
+            try {
+                let currentForecast = await axios.get(`${BASE_URL}/forecast?appid=${APP_KEY}&q=Tangerang&units=metric`)
+                forecastListElement.forecasts = currentForecast.data.list;
+                console.log(currentForecast);
+            } catch (error) {
+                console.log(error)
+            }
         }
     }
 

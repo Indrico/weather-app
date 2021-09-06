@@ -2,6 +2,7 @@ import "../Components/side-bar.js"
 import "../Components/darkmode-toggle"
 import "../Components/main-content"
 import "../Components/desktop-status"
+import "../Components/forecast-list"
 import "regenerator-runtime";
 import getWeatherData from "./getWeather.js"
 

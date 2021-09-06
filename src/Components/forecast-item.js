@@ -17,26 +17,31 @@ class ForecastItem extends HTMLElement {
     }
 
     setWeatherImage = (description) => {
-        const gambarCuaca = document.querySelector('#gambar-cuaca');
+        let data = "";
         if (description == "clear sky") {
-            gambarCuaca.src = Clear;
+            data = Clear;
         } else if (description == "few clouds") {
-            gambarCuaca.src = LightCloud
+            data = LightCloud
         } else if (description == "scattered clouds") {
-            gambarCuaca.src = LightCloud
+            data = LightCloud
+        } else if (description == "broken clouds") {
+            data = LightCloud
         } else if (description == "overcast clouds") {
-            gambarCuaca.src = HeavyCloud
+            data = HeavyCloud
         } else if (description == "light rain") {
-            gambarCuaca.src = LightRain
+            data = LightRain
         } else if (description == "moderate rain") {
-            gambarCuaca.src = HeavyRain
-        } else if (description == "thunderstorm") {
-            gambarCuaca.src = Thunderstorm
+            data = HeavyRain
+        } else if (description == "heavy intensity rain") {
+            data = HeavyRain
+        }else if (description == "thunderstorm") {
+            data = Thunderstorm
         } else if (description == "snow") {
-            gambarCuaca.src = Snow
+            data = Snow
         } else if (description == "mist") {
-            gambarCuaca.src = LightCloud
+            data = LightCloud
         }
+        return data;
     }
     
     connectedCallback() {
@@ -46,11 +51,12 @@ class ForecastItem extends HTMLElement {
     render() {
         this.innerHTML = `
         <div class="transition-all duration-500 dark:text-white bg-blue-300 dark:bg-[#1E213A] p-4 flex justify-center items-center flex-col rounded-md">
-            <h3 class="text-2xl xl:text-lg 2xl:text-xl 3xl:text-2xl" id="waktu">${this.forecast.dt_txt}</h3>
+            <h3 class="text-2xl xl:text-lg 2xl:text-xl 3xl:text-2xl" id="waktu">${this._forecast.dt_txt}</h3>
+            <p>${this._forecast.weather[0].description}</p>
             <img src="${this.setWeatherImage(this._forecast.weather[0].description)}" class="xl:w-16 xl:h-16 2xl:w-24 2xl:h-24 3xl:w-36 3xl:h-36 mt-2 3xl:mt-4 object-contain z-10">
             <div class="flex justify-between w-full mt-2 px-3 3xl:mt-4 3xl:px-6 3xl:text-xl">
-                <p class="font-semibold">${this.forecast.main.temp_max}°C</p>
-                <p class="text-gray-700 dark:text-[#A09FB1]">${this.forecast.main.temp_min}°C</p>
+                <p class="font-semibold">${Math.round(this._forecast.main.temp_max)}°C</p>
+                <p class="text-gray-700 dark:text-[#A09FB1]">${Math.round(this._forecast.main.temp_min)}°C</p>
             </div>
         </div>
         `

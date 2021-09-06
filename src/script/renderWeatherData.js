@@ -71,4 +71,4 @@ const renderWeatherError = (error) => {
     console.log(error);
 }
 
-export default {renderWeatherData, renderWeatherError};
+export {renderWeatherData, renderWeatherError};
