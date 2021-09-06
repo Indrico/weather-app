@@ -18,8 +18,9 @@ const config = {
         ]
       },
       {
-        test: /\.(png|svg|jpg|jpeg|gif)$/i,
-        loader: 'url-loader'
+        test: /\.(png|jpg|gif|jpeg|svg)$/i,
+        exclude: /node_modules/,
+        use: 'file-loader',
       },
     ]
   },

@@ -1,6 +1,7 @@
 import axios from "axios";
 import "../Components/side-bar.js"
 import "../Components/darkmode-toggle"
+import "../Components/main-content"
 
 const getWeatherData = () => {
     const APP_KEY = "271b2d7bd990a7cc3c89e86b8260caf5";
