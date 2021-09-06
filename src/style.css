@@ -15,10 +15,10 @@
     filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(42deg) brightness(101%) contrast(100%);
 }
 
-.celcius {
+.temperature.active {
     @apply text-[#e7e7e7] bg-yellow-700 dark:text-[#100E1D] dark:bg-[#e7e7e7] cursor-pointer;
 }
 
-.fahrenheit {
+.temperature {
     @apply text-[#100E1D] bg-[#e7e7e7] dark:bg-[#585676] dark:text-white cursor-pointer;
 }
