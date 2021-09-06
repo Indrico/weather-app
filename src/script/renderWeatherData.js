@@ -67,4 +67,8 @@ const kondisiCuacaIndonesia = (kondisiCuaca) => {
     }
 }
 
-export default renderWeatherData;
+const renderWeatherError = (error) => {
+    console.log(error);
+}
+
+export default {renderWeatherData, renderWeatherError};

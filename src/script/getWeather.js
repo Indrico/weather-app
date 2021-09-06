@@ -1,5 +1,5 @@
 import axios from "axios";
-import renderWeatherData from "./renderWeatherData";
+import {renderWeatherData, renderWeatherError} from "./renderWeatherData";
 
 const getWeatherData = () => {
     const APP_KEY = "271b2d7bd990a7cc3c89e86b8260caf5";
@@ -10,19 +10,29 @@ const getWeatherData = () => {
 
     const getWeather = async () => {
         if (latitude != "" && longitude != "") {
-            let currentWeather = await axios.get(`${BASE_URL}/weather?appid=${APP_KEY}&lat=${latitude}&lon=${longitude}&units=metric`)
-            renderWeatherData(currentWeather);
             console.log("Menggunakan lokasi saat ini");
+            try {
+                let currentWeather = await axios.get(`${BASE_URL}/weather?appid=${APP_KEY}&lat=${latitude}&lon=${longitude}&units=metric`)
+                renderWeatherData(currentWeather);
+            } catch (error) {
+                // Error Message.
+                renderWeatherError(error);
+            }
         } else {
-            let currentWeather = await axios.get(`${BASE_URL}/weather?appid=${APP_KEY}&q=Tangerang&units=metric`)
-            renderWeatherData(currentWeather);
             console.log("Menggunakan lokasi Tangerang");
+            try {
+                let currentWeather = await axios.get(`${BASE_URL}/weather?appid=${APP_KEY}&q=Tangerang&units=metric`)
+                renderWeatherData(currentWeather);
+            } catch (error) {
+                renderWeatherError(error);
+            }
         }
     }
 
     const getWeatherForecast = async () => {
         if (latitude != "" && longitude != "") {
             let currentWeather = await axios.get(`${BASE_URL}/forecast?appid=${APP_KEY}&lat=${latitude}&lon=${longitude}&units=metric`)
+            renderWeatherForecast()
             console.log("Menggunakan lokasi saat ini");
             console.log(currentWeather);
         } else {
@@ -37,12 +47,12 @@ const getWeatherData = () => {
             navigator.geolocation.getCurrentPosition((position) => {
                 latitude = position.coords.latitude;
                 longitude = position.coords.longitude;
-                getWeather();
+                // getWeather();
                 getWeatherForecast();
             }, (error) => {
                 if (error.code == error.PERMISSION_DENIED) {
                     console.log("Akses lokasi tidak diizinkan oleh user")
-                    // getWeather();
+                    getWeather();
                     getWeatherForecast();
                 }
             });
