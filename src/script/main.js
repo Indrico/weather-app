@@ -1,6 +1,7 @@
 import "../Components/side-bar.js"
 import "../Components/darkmode-toggle"
 import "../Components/main-content"
+import "../Components/desktop-status"
 import getWeatherData from "./getWeather.js"
 
 const main = () => {
@@ -39,7 +40,7 @@ const main = () => {
 
     document.querySelector('#cari-tempat').addEventListener('click', sideBarOpen);
 
-    getWeatherData();
+    // getWeatherData();
 }
 
 export default main;
