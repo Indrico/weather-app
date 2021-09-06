@@ -9,17 +9,24 @@ const getWeatherData = () => {
     let longitude = "";
 
     const getWeather = async () => {
-        console.log(latitude, longitude);
         if (latitude != "" && longitude != "") {
             let currentWeather = await axios.get(`${BASE_URL}/weather?appid=${APP_KEY}&lat=${latitude}&lon=${longitude}&units=metric`)
             renderWeatherData(currentWeather);
-
             console.log("Menggunakan lokasi saat ini");
-            console.log(currentWeather);
         } else {
             let currentWeather = await axios.get(`${BASE_URL}/weather?appid=${APP_KEY}&q=Tangerang&units=metric`)
             renderWeatherData(currentWeather);
+            console.log("Menggunakan lokasi Tangerang");
+        }
+    }
 
+    const getWeatherForecast = async () => {
+        if (latitude != "" && longitude != "") {
+            let currentWeather = await axios.get(`${BASE_URL}/forecast?appid=${APP_KEY}&lat=${latitude}&lon=${longitude}&units=metric`)
+            console.log("Menggunakan lokasi saat ini");
+            console.log(currentWeather);
+        } else {
+            let currentWeather = await axios.get(`${BASE_URL}/forecast?appid=${APP_KEY}&q=Tangerang&units=metric`)
             console.log("Menggunakan lokasi Tangerang");
             console.log(currentWeather);
         }
@@ -31,10 +38,12 @@ const getWeatherData = () => {
                 latitude = position.coords.latitude;
                 longitude = position.coords.longitude;
                 getWeather();
+                getWeatherForecast();
             }, (error) => {
                 if (error.code == error.PERMISSION_DENIED) {
                     console.log("Akses lokasi tidak diizinkan oleh user")
-                    getWeather();
+                    // getWeather();
+                    getWeatherForecast();
                 }
             });
         } else {
