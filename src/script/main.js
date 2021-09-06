@@ -1,7 +1,7 @@
 import axios from "axios";
 import "../Components/side-bar.js"
 
-function main2() {
+const getWeatherData = () => {
     const APP_KEY = "271b2d7bd990a7cc3c89e86b8260caf5";
     const BASE_URL = "https://api.openweathermap.org/data/2.5/weather";
 
@@ -43,7 +43,7 @@ function main2() {
 }
 
 const main = () => {
-    const sideBar = document.querySelector('side-bar');
+    const sideBarElement = document.querySelector('side-bar');
 
     const sideBarClose = () => {
         const sidebar = document.querySelector('#sidebar');
@@ -53,7 +53,22 @@ const main = () => {
         transparentBackground.style.display = "none";
     }
 
-    sideBar.closeSideBar = sideBarClose;
+    const sideBarOpen = () => {
+        const sidebar = document.querySelector('#sidebar');
+        const transparentBackground = document.querySelector('#transparent-bg');
+
+        sidebar.style.transform = "translateX(0%)";
+        transparentBackground.style.display = "block";
+    }
+
+    const searchLocation = () => {
+        console.log('Mencari Lokasi');
+    }
+
+    sideBarElement.closeSideBar = sideBarClose;
+    sideBarElement.searchLocation = searchLocation;
+
+    document.querySelector('#cari-tempat').addEventListener('click', sideBarOpen);
 }
 
 export default main;
