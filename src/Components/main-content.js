@@ -12,6 +12,17 @@ class MainContent extends HTMLElement {
         this.render();
     }
 
+    currentDate() {
+        let today = new Date();
+        let hari = today.getDay();
+        
+        const hariIndonesia = ['Minggu', 'Senin', 'Selasa', 'Rabu', 'Kamis', 'Jumat', 'Sabtu'];
+        const bulanIndonesia = ['Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember'];
+
+        let date = `${hariIndonesia[hari]}, ${today.getDate()} ${bulanIndonesia[today.getMonth()]} ${today.getYear()+1900}`;
+        return date;
+    }
+
     render() {
         this.innerHTML = `
         <main class="transition-all duration-500 p-8 bg-gradient-to-b from-[#3092d3] to-[#d4d8dd] dark:from-[#000046] dark:to-[#6ac7e0] h-screen flex flex-col justify-between xl:block xl:h-screen">
@@ -20,7 +31,6 @@ class MainContent extends HTMLElement {
                     Cari Tempat
                 </div>
                 <div class="flex items-center">
-                    <!-- Rounded switch -->
                     <darkmode-toggle></darkmode-toggle>
                 </div>
             </div>
@@ -28,8 +38,8 @@ class MainContent extends HTMLElement {
                 <img src="${Clear}" class="w-[8rem] xl:w-[8rem] 2xl:w-[10rem] 3xl:w-[12rem] z-10" id="gambar-cuaca">
             </div>
             <div class="flex justify-between items-center xl:h-[30vh] flex-col dark:text-white">
-                <p class="mt-8 text-6xl xl:text-4xl 2xl:text-6xl 3xl:text-8xl font-bold" id="suhu-sekarang">25°C</p>
-                <p class="mt-8 text-3xl xl:text-2xl 2xl:text-3xl 3xl:text-5xl font-semibold" id="kondisi-sekarang">Cerah</p>
+                <p class="mt-8 text-6xl xl:text-6xl 2xl:text-7xl 3xl:text-8xl font-bold" id="suhu-sekarang">25°C</p>
+                <p class="mt-8 text-3xl xl:text-3xl 2xl:text-4xl 3xl:text-5xl font-semibold" id="kondisi-sekarang">Cerah</p>
             </div>
             <div class="xl:hidden flex justify-between items-center my-5 dark:text-white">
                 <div class="flex font-semibold">
@@ -44,7 +54,7 @@ class MainContent extends HTMLElement {
             </div>
             <div class="h-[20vh] flex flex-col justify-around items-center">
                 <div class="flex justify-between text-lg 2xl:text-xl 3xl:text-2xl dark:text-white" id="tanggal-sekarang">
-                    <p>Jumat, 9 Agustus 2021</p>
+                    <p>${this.currentDate()}</p>
                 </div>
                 <p class="text-lg 2xl:text-xl 3xl:text-2xl dark:text-white medium flex justify-between items-center">
                     <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 3xl:h-8 3xl:w-8 mr-4" viewBox="0 0 20 20" fill="currentColor">
