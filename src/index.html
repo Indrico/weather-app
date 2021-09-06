@@ -7,86 +7,90 @@
     <title>Cuaca</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Muli:wght@400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Muli:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body class="font-muli">
+    <div class="hidden w-[33vw] absolute top-0 left-0 transform -translate-x-full">
+        
+    </div>
+
     <div class="grid xl:grid-cols-3 xl:h-screen">
         <main class="p-8 bg-gradient-to-b from-[#000046] to-[#1CB5E0] xl:h-screen">
             <div class="flex justify-between">
-                <input type="text" placeholder="Cari tempat" class="px-4 py-2 text-xl outline-none text-white placeholder-white bg-gray-600 rounded-md">
+                <input type="text" placeholder="Cari tempat" class="px-4 py-2 3xl:text-xl outline-none text-white placeholder-white bg-gray-600 rounded-md">
                 <div class="flex items-center">
                     <!-- Rounded switch -->
-                    <label class="inline-block relative w-16 h-9 mr-6 md:mr-20" title="Toggle Dark Mode">
+                    <label class="inline-block relative w-16 h-9 mr-6 xl:mr-0 2xl:mr-10 3xl:mr-20" title="Toggle Dark Mode">
                         <input type="checkbox" class="opacity-0 w-0 h-0 peer" id="toggle-dark-mode" checked>
                         <span class="absolute cursor-pointer inset-0 bg-[#d4d5e4] peer-focus:shadow-sm peer-checked:bg-[#505156] transition-all duration-300 before:absolute before:h-7 before:w-7 before:left-1 before:bottom-1 before:bg-gradient-to-r before:from-yellow-400 before:to-red-400 before:transition-all before:duration-500 peer-checked:before:translate-x-7 rounded-full before:rounded-full toogle-moon"></span>
                     </label>
                 </div>
             </div>
-            <div class="flex justify-center items-center xl:h-[40vh] relative">
-                <img src="<%= require('./assets/images/Clear.png'). default %>">
+            <div class="flex justify-center items-center xl:h-[35vh] 3xl:h-[40vh] relative">
+                <img src="<%= require('./assets/images/Clear.png'). default %>" class="w-[8rem] xl:w-[8rem] 2xl:w-[10rem] 3xl:w-[12rem]">
             </div>
             <div class="flex justify-between items-center xl:h-[30vh] flex-col">
-                <p class="text-white mt-8 3xl:text-8xl font-bold">15°C</p>
-                <p class="text-white mt-8 3xl:text-5xl font-semibold">Cerah</p>
+                <p class="text-white mt-8 xl:text-4xl 2xl:text-6xl 3xl:text-8xl font-bold">15°C</p>
+                <p class="text-white mt-8 xl:text-2xl 2xl:text-3xl 3xl:text-5xl font-semibold">Cerah</p>
             </div>
             <div class="h-[20vh] flex flex-col justify-around items-center">
-                <div class="flex justify-between text-2xl text-white">
+                <div class="flex justify-between text-lg 2xl:text-xl 3xl:text-2xl text-white">
                     <p>Jumat, 9 Agustus 2021</p>
                 </div>
-                <p class="text-2xl text-white medium flex justify-between items-center">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 mr-4" viewBox="0 0 20 20" fill="currentColor">
+                <p class="text-lg 2xl:text-xl 3xl:text-2xl text-white medium flex justify-between items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="xl:w-6 xl:h-6 3xl:h-8 3xl:w-8 mr-4" viewBox="0 0 20 20" fill="currentColor">
                         <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd" />
                     </svg>
                     Jakarta
                 </p>
             </div>
         </main>
-        <section class="col-span-2 p-8 xl:px-32 bg-[#100E1D]">
+        <section class="col-span-2 p-8 xl:px-12 2xl:px-20 3xl:px-32 bg-[#100E1D]">
             <div class="flex justify-end items-center font-bold">
-                <div class="text-[#100E1D] bg-[#e7e7e7] text-2xl w-16 h-16 rounded-full justify-center items-center flex mr-10">
+                <div class="text-[#100E1D] bg-[#e7e7e7] xl:text-lg 2xl:text-xl 3xl:text-2xl xl:w-10 xl:h-10 2xl:w-12 2xl:h-12 3xl:w-16 3xl:h-16 rounded-full justify-center items-center flex mr-10">
                     °C
                 </div>
-                <div class="text-[#e7e7e7] bg-[#585676] text-2xl w-16 h-16 rounded-full justify-center items-center flex">
+                <div class="text-[#e7e7e7] bg-[#585676] xl:text-lg 2xl:text-xl 3xl:text-2xl xl:w-10 xl:h-10 2xl:w-12 2xl:h-12 3xl:w-16 3xl:h-16 rounded-full justify-center items-center flex">
                     °F
                 </div>
             </div>
-            <div class="grid grid-cols-5 gap-4 mt-12">
-                <div class="text-white bg-[#1E213A] p-4 flex justify-center items-center flex-col">
-                    <h3 class="text-2xl">Tomorrow</h3>
-                    <img src="<%= require('./assets/images/HeavyCloud.png'). default %>" class="w-36 h-36 mt-4 object-contain">
-                    <div class="flex justify-between w-full mt-4 px-6 text-xl">
+            <div class="grid grid-cols-5 gap-4 xl:mt-8 3xl:mt-12">
+                <div class="text-white bg-[#1E213A] p-4 flex justify-center items-center flex-col rounded-md">
+                    <h3 class="xl:text-lg 2xl:text-xl 3xl:text-2xl">Tomorrow</h3>
+                    <img src="<%= require('./assets/images/HeavyCloud.png'). default %>" class="xl:w-16 xl:h-16 2xl:w-24 2xl:h-24 3xl:w-36 3xl:h-36 mt-2 3xl:mt-4 object-contain">
+                    <div class="flex justify-between w-full xl:mt-2 xl:px-3 3xl:mt-4 3xl:px-6 3xl:text-xl">
                         <p class="font-semibold">15°C</p>
                         <p class="text-[#A09FB1]">10°C</p>
                     </div>
                 </div>
-                <div class="text-white bg-[#1E213A] p-4 flex justify-center items-center flex-col">
-                    <h3 class="text-2xl">11 Sept</h3>
-                    <img src="<%= require('./assets/images/HeavyRain.png'). default %>" class="w-36 h-36 mt-4 object-contain">
-                    <div class="flex justify-between w-full mt-4 px-6 text-xl">
+                <div class="text-white bg-[#1E213A] p-4 flex justify-center items-center flex-col rounded-md">
+                    <h3 class="xl:text-lg 2xl:text-xl 3xl:text-2xl">11 Sept</h3>
+                    <img src="<%= require('./assets/images/HeavyRain.png'). default %>" class="xl:w-16 xl:h-16 2xl:w-24 2xl:h-24 3xl:w-36 3xl:h-36 mt-2 3xl:mt-4 object-contain">
+                    <div class="flex justify-between w-full xl:mt-2 xl:px-3 3xl:mt-4 3xl:px-6 3xl:text-xl">
                         <p class="font-semibold">20°C</p>
                         <p class="text-[#A09FB1]">16°C</p>
                     </div>
                 </div>
-                <div class="text-white bg-[#1E213A] p-4 flex justify-center items-center flex-col">
-                    <h3 class="text-2xl">12 Sept</h3>
-                    <img src="<%= require('./assets/images/LightCloud.png'). default %>" class="w-36 h-36 mt-4 object-contain">
-                    <div class="flex justify-between w-full mt-4 px-6 text-xl">
+                <div class="text-white bg-[#1E213A] p-4 flex justify-center items-center flex-col rounded-md">
+                    <h3 class="xl:text-lg 2xl:text-xl 3xl:text-2xl">12 Sept</h3>
+                    <img src="<%= require('./assets/images/LightCloud.png'). default %>" class="xl:w-16 xl:h-16 2xl:w-24 2xl:h-24 3xl:w-36 3xl:h-36 mt-2 3xl:mt-4 object-contain">
+                    <div class="flex justify-between w-full xl:mt-2 xl:px-3 3xl:mt-4 3xl:px-6 3xl:text-xl">
+                        <p class="font-semibold">15°C</p>
+                        <p class="text-[#A09FB1]">10°C</p>
+                    </div>
+                </div>
+                <div class="text-white bg-[#1E213A] p-4 flex justify-center items-center flex-col rounded-md">
+                    <h3 class="xl:text-lg 2xl:text-xl 3xl:text-2xl">13 Sept</h3>
+                    <img src="<%= require('./assets/images/LightRain.png'). default %>" class="xl:w-16 xl:h-16 2xl:w-24 2xl:h-24 3xl:w-36 3xl:h-36 mt-2 3xl:mt-4 object-contain">
+                    <div class="flex justify-between w-full xl:mt-2 xl:px-3 3xl:mt-4 3xl:px-6 3xl:text-xl">
                         <p class="font-semibold">15°C</p>
                         <p class="text-[#A09FB1]">10°C</p>
                     </div>
                 </div>
                 <div class="text-white bg-[#1E213A] p-4 flex justify-center items-center flex-col">
-                    <h3 class="text-2xl">13 Sept</h3>
-                    <img src="<%= require('./assets/images/LightRain.png'). default %>" class="w-36 h-36 mt-4 object-contain">
-                    <div class="flex justify-between w-full mt-4 px-6 text-xl">
-                        <p class="font-semibold">15°C</p>
-                        <p class="text-[#A09FB1]">10°C</p>
-                    </div>
-                </div>
-                <div class="text-white bg-[#1E213A] p-4 flex justify-center items-center flex-col">
-                    <h3 class="text-2xl">14 Sept</h3>
-                    <img src="<%= require('./assets/images/Thunderstorm.png'). default %>" class="w-36 h-36 mt-4 object-contain">
-                    <div class="flex justify-between w-full mt-4 px-6 text-xl">
+                    <h3 class="xl:text-lg 2xl:text-xl 3xl:text-2xl">14 Sept</h3>
+                    <img src="<%= require('./assets/images/Thunderstorm.png'). default %>" class="xl:w-16 xl:h-16 2xl:w-24 2xl:h-24 3xl:w-36 3xl:h-36 mt-2 3xl:mt-4 object-contain">
+                    <div class="flex justify-between w-full xl:mt-2 xl:px-3 3xl:mt-4 3xl:px-6 3xl:text-xl">
                         <p class="font-semibold">15°C</p>
                         <p class="text-[#A09FB1]">10°C</p>
                     </div>
@@ -94,8 +98,47 @@
             </div>
             <div>
                 <h2>Status</h2>
-                <div>
-
+                <div class="grid grid-cols-2 xl:gap-4 2xl:gap-6 3xl:gap-8">
+                    <div class="bg-[rgb(30,33,58)] border-rounded text-white p-4 flex flex-col items-center justify-center rounded-xl">
+                        <div class="xl:text-xl 2xl:text-2xl 3xl:text-3xl xl:mb-2 2xl:mb-3 3xl:mb-4 flex items-center">
+                            <p class="">Angin</p> 
+                            <img src="<%= require('./assets/images/wind.svg'). default %>" class="filter-white w-12 h-12 ml-5">
+                        </div>
+                        <p class="xl:text-3xl 2xl:text-4xl 3xl:text-6xl font-medium xl:mb-2 2xl:mb-3 3xl:mb-4">
+                            <span class="xl:text-4xl 2xl:text-6xl 3xl:text-8xl font-bold">8</span>
+                            km/h
+                        </p>
+                    </div>
+                    <div class="bg-[rgb(30,33,58)] border-rounded text-white p-4 flex flex-col items-center justify-center rounded-xl">
+                        <div class="xl:text-xl 2xl:text-2xl 3xl:text-3xl xl:mb-2 2xl:mb-3 3xl:mb-4 flex items-center">
+                            <p class="">Kelembaban Udara</p> 
+                            <img src="<%= require('./assets/images/water-drop.svg'). default %>" class="filter-white w-12 h-8 ml-5">
+                        </div>
+                        <p class="xl:text-3xl 2xl:text-4xl 3xl:text-6xl font-medium xl:mb-2 2xl:mb-3 3xl:mb-4">
+                            <span class="xl:text-4xl 2xl:text-6xl 3xl:text-8xl font-bold">84</span>
+                            %
+                        </p>
+                    </div>
+                    <div class="bg-[rgb(30,33,58)] border-rounded text-white p-4 flex flex-col items-center justify-center rounded-xl">
+                        <div class="xl:text-xl 2xl:text-2xl 3xl:text-3xl xl:mb-2 2xl:mb-3 3xl:mb-4 flex items-center">
+                            <p class="">Visibilitas</p> 
+                            <img src="<%= require('./assets/images/eye.svg'). default %>" class="filter-white w-8 h-8 ml-5">
+                        </div>
+                        <p class="xl:text-3xl 2xl:text-4xl 3xl:text-6xl font-medium xl:mb-2 2xl:mb-3 3xl:mb-4">
+                            <span class="xl:text-4xl 2xl:text-6xl 3xl:text-8xl font-bold">10</span>
+                            km
+                        </p>
+                    </div>
+                    <div class="bg-[rgb(30,33,58)] border-rounded text-white p-4 flex flex-col items-center justify-center rounded-xl">
+                        <div class="xl:text-xl 2xl:text-2xl 3xl:text-3xl xl:mb-2 2xl:mb-3 3xl:mb-4 flex items-center">
+                            <p class="">Tekanan Udara</p> 
+                            <img src="<%= require('./assets/images/steam-air.svg'). default %>" class="filter-white w-12 h-8 ml-5">
+                        </div>
+                        <p class="xl:text-3xl 2xl:text-4xl 3xl:text-6xl font-medium xl:mb-2 2xl:mb-3 3xl:mb-4">
+                            <span class="xl:text-4xl 2xl:text-6xl 3xl:text-8xl font-bold">823</span>
+                            mb
+                        </p>
+                    </div>
                 </div>
             </div>
         </section>
