@@ -71,7 +71,6 @@ class ForecastList extends HTMLElement {
 
     render() {
         this.innerHTML = "";
-        console.log(this._forecasts);
         for (let i = 2; i < 7; i++) {
             const forecastItem = document.createElement('forecast-item')
             forecastItem.forecast = this._forecasts[i];

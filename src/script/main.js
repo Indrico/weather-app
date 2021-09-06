@@ -31,7 +31,11 @@ const main = () => {
     }
 
     const searchLocation = () => {
-        console.log('Mencari Lokasi');
+        let city = sideBarElement.value;
+        sessionStorage.setItem('city', city);
+        getWeather();
+        getWeatherForecast();
+        sideBarClose();
     }
 
     const darkModeToggle = () => {

@@ -18,7 +18,7 @@ class Sidebar extends HTMLElement {
     }
 
     get value() {
-        return this.querySelector('#searchElement').value;
+        return this.querySelector('#search-input').value;
     }
 
     render() {
@@ -33,7 +33,7 @@ class Sidebar extends HTMLElement {
                     </svg>
                 </div>
                 <div class="flex justify-between mt-8 items-center">
-                    <input type="text" class="px-4 py-2 bg-transparent border-gray-600 dark:border-gray-200 dark:text-white border-2 outline-none" placeholder="&#xF002; Search Location" style="font-family:Muli, FontAwesome">
+                    <input id="search-input" type="text" class="px-4 py-2 bg-transparent border-gray-600 dark:border-gray-200 dark:text-white border-2 outline-none" placeholder="&#xF002; Search Location" style="font-family:Muli, FontAwesome">
                     <button class="text-white bg-blue-500 px-4 py-2 rounded-md cursor-pointer" id="search-location">Search</button>
                 </div>
             </div>

@@ -8,15 +8,17 @@ const getWeather = async () => {
     let city = sessionStorage.getItem("city");
     let units = sessionStorage.getItem("units");
 
+    console.log(city);
+
     if (city != null){
         try {
-            let currentWeather = await axios.get(`${BASE_URL}/weather?appid=${APP_KEY}&q=${city}&units=${units}`)
+            let currentWeather = await axios.get(`${BASE_URL}/weather?appid=${APP_KEY}&q=${city}&units=${units}`);
+            console.log(currentWeather.data);
             renderWeatherData(currentWeather, units);
         } catch (error) {
             renderWeatherError(error);
         }
-    }
-    if (latitude != null && longitude != null) {
+    }else if (latitude != null && longitude != null) {
         console.log("Menggunakan lokasi saat ini");
         try {
             let currentWeather = await axios.get(`${BASE_URL}/weather?appid=${APP_KEY}&lat=${latitude}&lon=${longitude}&units=${units}`);
