@@ -1,5 +1,6 @@
 import axios from "axios";
 import "../Components/side-bar.js"
+import "../Components/darkmode-toggle"
 
 const getWeatherData = () => {
     const APP_KEY = "271b2d7bd990a7cc3c89e86b8260caf5";
@@ -44,6 +45,7 @@ const getWeatherData = () => {
 
 const main = () => {
     const sideBarElement = document.querySelector('side-bar');
+    const darkModeElement = document.querySelector('darkmode-toggle')
 
     const sideBarClose = () => {
         const sidebar = document.querySelector('#sidebar');
@@ -65,8 +67,15 @@ const main = () => {
         console.log('Mencari Lokasi');
     }
 
+    const darkModeToggle = () => {
+        const body = document.body;
+        body.classList.toggle('dark');
+    }
+
     sideBarElement.closeSideBar = sideBarClose;
     sideBarElement.searchLocation = searchLocation;
+    
+    darkModeElement.toggleDarkMode = darkModeToggle;
 
     document.querySelector('#cari-tempat').addEventListener('click', sideBarOpen);
 }
