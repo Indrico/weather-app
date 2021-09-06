@@ -1,28 +1,25 @@
+/* eslint-disable no-underscore-dangle */
 class Sidebar extends HTMLElement {
-    constructor() {
-        super()
-    }
-    
-    connectedCallback() {
-        this.render();
-    }
+  connectedCallback() {
+    this.render();
+  }
 
-    set closeSideBar(event) {
-        this._closeSideBar = event;
-        this.render();
-    }
+  set closeSideBar(event) {
+    this._closeSideBar = event;
+    this.render();
+  }
 
-    set searchLocation(event) {
-        this._searchLocation = event;
-        this.render();
-    }
+  set searchLocation(event) {
+    this._searchLocation = event;
+    this.render();
+  }
 
-    get value() {
-        return this.querySelector('#search-input').value;
-    }
+  get value() {
+    return this.querySelector('#search-input').value;
+  }
 
-    render() {
-        this.innerHTML = `
+  render() {
+    this.innerHTML = `
         <div>
             <div class="bg-black opacity-50 absolute top-0 left-0 h-screen w-screen z-20 transition-all duration-500 hidden" id="transparent-bg">
             </div>
@@ -37,12 +34,15 @@ class Sidebar extends HTMLElement {
                     <button class="text-white bg-blue-500 px-4 py-2 rounded-md cursor-pointer" id="search-location">Search</button>
                 </div>
             </div>
+            <div>
+
+            </div>
         </div>
-        `
-        this.querySelector('#close-sidebar').addEventListener('click', this._closeSideBar);
-        this.querySelector('#transparent-bg').addEventListener('click', this._closeSideBar);
-        this.querySelector('#search-location').addEventListener('click', this._searchLocation);
-    }
+        `;
+    this.querySelector('#close-sidebar').addEventListener('click', this._closeSideBar);
+    this.querySelector('#transparent-bg').addEventListener('click', this._closeSideBar);
+    this.querySelector('#search-location').addEventListener('click', this._searchLocation);
+  }
 }
 
-customElements.define("side-bar", Sidebar);
+customElements.define('side-bar', Sidebar);
