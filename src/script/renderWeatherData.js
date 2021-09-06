@@ -14,6 +14,11 @@ const renderWeatherData = (data) => {
     document.querySelector('#mobile-humidity').innerHTML = `${data.data.main.humidity}%`;
     document.querySelector('#mobile-air-pressure').innerHTML = `${data.data.main.pressure} mb`;
     document.querySelector('#mobile-wind-speed').innerHTML = `${data.data.wind.speed} km/h`;
+    
+    document.querySelector('#wind-speed').innerHTML = `${data.data.wind.speed} km/h`;
+    document.querySelector('#humidity').innerHTML = `${data.data.main.humidity}%`;
+    document.querySelector('#visibility').innerHTML = `${Math.round(data.data.visibility/1000)}%`;
+    document.querySelector('#air-pressure').innerHTML = `${data.data.main.pressure} mb`;
 }
 
 const setWeatherImage = (description) => {
