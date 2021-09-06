@@ -16,7 +16,7 @@ const getWeather = async () => {
             renderWeatherError(error);
         }
     }
-    if (latitude != "" && longitude != "") {
+    if (latitude != null && longitude != null) {
         console.log("Menggunakan lokasi saat ini");
         try {
             let currentWeather = await axios.get(`${BASE_URL}/weather?appid=${APP_KEY}&lat=${latitude}&lon=${longitude}&units=${units}`);

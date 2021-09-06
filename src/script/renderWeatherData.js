@@ -13,9 +13,10 @@ const renderWeatherData = (data, units = "metric") => {
     document.querySelector('#suhu-sekarang').innerHTML = `${Math.round(data.data.main.temp)}°${units == "metric" ? "C" : "F"}`;
     document.querySelector('#mobile-humidity').innerHTML = `${data.data.main.humidity}%`;
     document.querySelector('#mobile-air-pressure').innerHTML = `${data.data.main.pressure} mb`;
-    document.querySelector('#mobile-wind-speed').innerHTML = `${data.data.wind.speed} km/h`;
+    document.querySelector('#mobile-wind-speed').innerHTML = `${data.data.wind.speed} ${units == "metric" ? "m/s" : "mph"}`;
     
     document.querySelector('#wind-speed').innerHTML = `${data.data.wind.speed}`;
+    document.querySelector('#units-desktop').innerHTML = `${units == "metric" ? "m/s": "mph"}`;
     document.querySelector('#humidity').innerHTML = `${data.data.main.humidity}`;
     document.querySelector('#visibility').innerHTML = `${Math.round(data.data.visibility/1000)}`;
     document.querySelector('#air-pressure').innerHTML = `${data.data.main.pressure}`;

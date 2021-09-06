@@ -22,7 +22,7 @@ class DesktopStatus extends HTMLElement {
                 </div>
                 <p class="xl:text-3xl 2xl:text-4xl 3xl:text-6xl font-medium xl:mb-2 2xl:mb-3 3xl:mb-4">
                     <span class="xl:text-4xl 2xl:text-6xl 3xl:text-8xl font-bold" id="wind-speed">8</span>
-                    km/h
+                    <span id="units-desktop">m/s</span>
                 </p>
             </div>
             <div class="transition-all duration-500 bg-blue-400 dark:bg-[rgb(30,33,58)] border-rounded text-white p-4 flex flex-col items-center justify-center rounded-xl">
