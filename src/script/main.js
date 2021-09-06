@@ -1,6 +1,7 @@
 import axios from "axios";
+import "../Components/side-bar.js"
 
-function main() {
+function main2() {
     const APP_KEY = "271b2d7bd990a7cc3c89e86b8260caf5";
     const BASE_URL = "https://api.openweathermap.org/data/2.5/weather";
 
@@ -39,6 +40,20 @@ function main() {
     }
 
     getLocation();
+}
+
+const main = () => {
+    const sideBar = document.querySelector('side-bar');
+
+    const sideBarClose = () => {
+        const sidebar = document.querySelector('#sidebar');
+        const transparentBackground = document.querySelector('#transparent-bg');
+
+        sidebar.style.transform = "translateX(-100%)";
+        transparentBackground.style.display = "none";
+    }
+
+    sideBar.closeSideBar = sideBarClose;
 }
 
 export default main;

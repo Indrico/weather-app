@@ -1,5 +1,4 @@
 import './style.css'
-import './assets/images/Clear.png'
-// import main from "./script/main.js";
+import main from './script/main.js'
 
-main();
+document.addEventListener("DOMContentLoaded", main);
