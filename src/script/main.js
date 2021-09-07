@@ -9,7 +9,6 @@ import 'regenerator-runtime';
 import getWeatherData from './getInitialWeatherData';
 import getWeatherForecast from './getWeatherForecast';
 import getWeather from './getWeather';
-import { loadingStarted } from './loading-toggle';
 
 const main = () => {
   const sideBarElement = document.querySelector('side-bar');
