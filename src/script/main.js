@@ -27,6 +27,7 @@ const main = () => {
   const sideBarOpen = () => {
     const sidebar = document.querySelector('#sidebar');
     const transparentBackground = document.querySelector('#transparent-bg');
+    document.querySelector('#search-input').focus();
 
     sidebar.style.transform = 'translateX(0%)';
     transparentBackground.style.display = 'block';
@@ -38,6 +39,13 @@ const main = () => {
     getWeather();
     getWeatherForecast();
     sideBarClose();
+  };
+
+  const keyInput = (e) => {
+    if (e.keyCode === 13) {
+      e.preventDefault();
+      searchLocation();
+    }
   };
 
   const darkModeToggle = () => {
@@ -69,6 +77,7 @@ const main = () => {
 
   sideBarElement.closeSideBar = sideBarClose;
   sideBarElement.searchLocation = searchLocation;
+  sideBarElement.keyInput = keyInput;
 
   darkModeElement.toggleDarkMode = darkModeToggle;
 
@@ -87,6 +96,7 @@ const main = () => {
   }
 
   document.querySelector('#cari-tempat').addEventListener('click', sideBarOpen);
+  document.querySelector('#search-input').addEventListener('keyup', keyInput);
 
   getWeatherData();
 };
