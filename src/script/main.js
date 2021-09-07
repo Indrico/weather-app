@@ -43,6 +43,12 @@ const main = () => {
   const darkModeToggle = () => {
     const { body } = document;
     body.classList.toggle('dark');
+
+    if (body.classList.contains('dark')) {
+      localStorage.setItem('darkmode', 'enabled');
+    } else {
+      localStorage.setItem('darkmode', 'disabled');
+    }
   };
 
   const setMetric = () => {
@@ -68,6 +74,17 @@ const main = () => {
 
   unitsElement.metric = setMetric;
   unitsElement.imperial = setImperial;
+
+  const darkmode = localStorage.getItem('darkmode');
+  if (darkmode === 'enabled') {
+    const { body } = document;
+    body.classList.add('dark');
+    document.querySelector('#toggle-dark-mode').checked = true;
+  } else {
+    const { body } = document;
+    body.classList.remove('dark');
+    document.querySelector('#toggle-dark-mode').checked = false;
+  }
 
   document.querySelector('#cari-tempat').addEventListener('click', sideBarOpen);
 

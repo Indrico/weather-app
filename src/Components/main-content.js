@@ -4,27 +4,23 @@ import Humidity from '../assets/images/water-drop.svg';
 import WindSpeed from '../assets/images/wind.svg';
 
 class MainContent extends HTMLElement {
-    constructor() {
-        super()
-    }
-    
-    connectedCallback() {
-        this.render();
-    }
+  connectedCallback() {
+    this.render();
+  }
 
-    currentDate() {
-        let today = new Date();
-        let hari = today.getDay();
-        
-        const hariIndonesia = ['Minggu', 'Senin', 'Selasa', 'Rabu', 'Kamis', 'Jumat', 'Sabtu'];
-        const bulanIndonesia = ['Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember'];
+  currentDate = () => {
+    const today = new Date();
+    const hari = today.getDay();
 
-        let date = `${hariIndonesia[hari]}, ${today.getDate()} ${bulanIndonesia[today.getMonth()]} ${today.getYear()+1900}`;
-        return date;
-    }
+    const hariIndonesia = ['Minggu', 'Senin', 'Selasa', 'Rabu', 'Kamis', 'Jumat', 'Sabtu'];
+    const bulanIndonesia = ['Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember'];
 
-    render() {
-        this.innerHTML = `
+    const date = `${hariIndonesia[hari]}, ${today.getDate()} ${bulanIndonesia[today.getMonth()]} ${today.getYear() + 1900}`;
+    return date;
+  }
+
+  render() {
+    this.innerHTML = `
         <main class="transition-all duration-500 p-8 bg-gradient-to-b from-[#3092d3] to-[#d4d8dd] dark:from-[#000046] dark:to-[#6ac7e0] h-screen flex flex-col justify-between xl:block xl:h-screen">
             <div class="flex justify-between">
                 <div class="px-4 py-2 3xl:text-xl outline-none dark:text-white dark:bg-gray-600 border-2 border-gray-800 rounded-md w-48 xl:w-64 cursor-pointer" id="cari-tempat">
@@ -64,8 +60,8 @@ class MainContent extends HTMLElement {
                 </p>
             </div>
         </main>
-        `
-    }
+        `;
+  }
 }
 
-customElements.define("main-content", MainContent);
+customElements.define('main-content', MainContent);
