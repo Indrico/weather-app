@@ -11,4 +11,8 @@ const showError = () => {
   setTimeout(closeError, 5000);
 };
 
-export { showError, closeError };
+const setErrorMessage = (message) => {
+  document.getElementById('error-element').innerHTML = message;
+};
+
+export { showError, closeError, setErrorMessage };
