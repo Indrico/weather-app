@@ -4,16 +4,6 @@ class Loading extends HTMLElement {
     this.render();
   }
 
-  set loadingStarted(event) {
-    this._loadingStarted = event;
-    this.render();
-  }
-
-  set loadingFinished(event) {
-    this._loadingFinished = event;
-    this.render();
-  }
-
   render() {
     this.innerHTML = `
       <div class="fixed top-0 left-0 bg-blue-600 text-white z-50 w-full h-full flex justify-center items-center flex-col" id="loading-element">
