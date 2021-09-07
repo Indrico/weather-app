@@ -8,7 +8,8 @@ const getWeather = async () => {
   const city = sessionStorage.getItem('city');
   const units = sessionStorage.getItem('units');
 
-  if (city != null) {
+  if (city !== null) {
+    console.log('test');
     try {
       const currentWeather = await axios.get(`${BASE_URL}/weather?appid=${APP_KEY}&q=${city}&units=${units}`);
       renderWeatherData(currentWeather, units);

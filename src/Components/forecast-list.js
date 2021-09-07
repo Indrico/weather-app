@@ -67,8 +67,8 @@ class ForecastList extends HTMLElement {
     return this._units;
   }
 
-  static renderError() {
-    // console.log(message);
+  static renderError(message) {
+    console.log(message);
   }
 
   render() {

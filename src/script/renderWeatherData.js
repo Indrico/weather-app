@@ -6,6 +6,7 @@ import HeavyRain from '../assets/images/HeavyRain.png';
 import LightRain from '../assets/images/LightRain.png';
 import Snow from '../assets/images/Snow.png';
 import Thunderstorm from '../assets/images/Thunderstorm.png';
+import { loadingFinished } from './loading-toggle';
 
 const setWeatherImage = (description) => {
   const gambarCuaca = document.querySelector('#gambar-cuaca');
@@ -70,6 +71,8 @@ const renderWeatherData = (data, units = 'metric') => {
 };
 
 const renderWeatherError = (error) => {
+  loadingFinished();
+  sessionStorage.removeItem('city');
   console.log(error);
 };
 

@@ -4,16 +4,12 @@ import Humidity from '../assets/images/water-drop.svg';
 import WindSpeed from '../assets/images/wind.svg';
 
 class DesktopStatus extends HTMLElement {
-    constructor() {
-        super()
-    }
+  connectedCallback() {
+    this.render();
+  }
 
-    connectedCallback() {
-        this.render();
-    }
-
-    render() {
-        this.innerHTML = `
+  render() {
+    this.innerHTML = `
         <div class="grid grid-cols-2 xl:gap-4 2xl:gap-6 3xl:gap-8 xl:mt-4 2xl:mt-8">
             <div class="transition-all duration-500 bg-blue-400 dark:bg-[rgb(30,33,58)] border-rounded text-white p-4 flex flex-col items-center justify-center rounded-xl">
                 <div class="xl:text-xl 2xl:text-2xl 3xl:text-3xl xl:mb-2 2xl:mb-3 3xl:mb-4 flex items-center">
@@ -56,8 +52,8 @@ class DesktopStatus extends HTMLElement {
                 </p>
             </div>
         </div>
-        `
-    }
+        `;
+  }
 }
 
-customElements.define("desktop-status", DesktopStatus);
+customElements.define('desktop-status', DesktopStatus);
