@@ -11,13 +11,14 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
 </head>
 <body class="dark font-muli">
+    <loading-element></loading-element>
     <side-bar></side-bar>
 
     <div class="grid xl:grid-cols-3 xl:h-screen">
         <main-content></main-content>
         <section class="transition-all duration-500 xl:col-span-2 p-8 xl:px-12 2xl:px-20 3xl:px-32 dark:bg-[#100E1D]">
             <units-element class="flex justify-end items-center font-bold"></units-element>
-            <forecast-list class="grid xl:grid-cols-5 gap-8 xl:gap-4 xl:mt-4 2xl:mt-8" id="forecast-list"></forecast-list>
+            <forecast-list class="grid xl:grid-cols-5 gap-8 xl:gap-4 mt-4 xl:mt-4 2xl:mt-8" id="forecast-list"></forecast-list>
             <div class="hidden xl:block">
                 <desktop-status></desktop-status>
             </div>

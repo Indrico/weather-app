@@ -22,3 +22,7 @@
 .temperature {
     @apply text-[#100E1D] bg-[#e7e7e7] dark:bg-[#585676] dark:text-white cursor-pointer;
 }
+
+.loading-ring:after {
+    border-color: #fff transparent #fff transparent;
+}
