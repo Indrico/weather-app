@@ -5,7 +5,7 @@ import HeavyCloud from '../assets/images/HeavyCloud.png';
 import LightCloud from '../assets/images/LightCloud.png';
 import HeavyRain from '../assets/images/HeavyRain.png';
 import LightRain from '../assets/images/LightRain.png';
-import Loading from './loading';
+import { loadingFinished } from '../script/loading-toggle';
 
 class ForecastList extends HTMLElement {
   constructor() {
@@ -72,7 +72,7 @@ class ForecastList extends HTMLElement {
   }
 
   render() {
-    Loading.loadingFinished();
+    loadingFinished();
     this.innerHTML = '';
     for (let i = 2; i < 7; i += 1) {
       const forecastItem = document.createElement('forecast-item');
