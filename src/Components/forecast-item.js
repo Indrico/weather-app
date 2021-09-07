@@ -52,7 +52,7 @@ class ForecastItem extends HTMLElement {
     this.innerHTML = `
         <div class='transition-all duration-500 dark:text-white bg-blue-300 dark:bg-[#1E213A] p-4 flex justify-center items-center flex-col rounded-md'>
             <h3 class='text-2xl xl:text-lg 2xl:text-xl 3xl:text-2xl' id='waktu'>${this._forecast.dt_txt.substring(5, 16)}</h3>
-            <img src='${this.setWeatherImage(this._forecast.weather[0].description)}' class='xl:w-16 xl:h-16 2xl:w-24 2xl:h-24 3xl:w-36 3xl:h-36 mt-2 3xl:mt-4 object-contain z-10'>
+            <img loading="lazy" src='${this.setWeatherImage(this._forecast.weather[0].description)}' class='xl:w-16 xl:h-16 2xl:w-24 2xl:h-24 3xl:w-36 3xl:h-36 mt-2 3xl:mt-4 object-contain z-10'>
             <div class='flex justify-between w-full mt-2 px-3 3xl:mt-4 3xl:px-6 3xl:text-xl'>
                 <p class='font-semibold'>${Math.round(this._forecast.main.temp_max)}°${this._units === 'metric' ? 'C' : 'F'}</p>
                 <p class='text-gray-700 dark:text-[#A09FB1]'>${Math.round(this._forecast.main.temp_min)}°${this._units === 'metric' ? 'C' : 'F'}</p>

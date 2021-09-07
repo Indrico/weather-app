@@ -31,7 +31,7 @@ class MainContent extends HTMLElement {
                 </div>
             </div>
             <div class="flex justify-center items-center mt-6 xl:mt-0 xl:h-[35vh] 3xl:h-[40vh] relative">
-                <img src="${Clear}" class="w-[8rem] xl:w-[8rem] 2xl:w-[10rem] 3xl:w-[12rem] z-10" id="gambar-cuaca">
+                <img loading="lazy" src="${Clear}" class="w-[8rem] xl:w-[8rem] 2xl:w-[10rem] 3xl:w-[12rem] z-10" id="gambar-cuaca">
             </div>
             <div class="flex justify-between items-center xl:h-[30vh] flex-col dark:text-white">
                 <p class="mt-8 text-6xl xl:text-6xl 2xl:text-7xl 3xl:text-8xl font-bold" id="suhu-sekarang">25°C</p>
@@ -39,13 +39,13 @@ class MainContent extends HTMLElement {
             </div>
             <div class="xl:hidden flex justify-between items-center my-5 dark:text-white">
                 <div class="flex font-semibold">
-                    <img src="${Humidity}" class="dark:filter-white w-8 h-6 mr-2"> <span id="mobile-humidity">13%</span>
+                    <img loading="lazy" src="${Humidity}" class="dark:filter-white w-8 h-6 mr-2"> <span id="mobile-humidity">13%</span>
                 </div>
                 <div class="flex font-semibold">
-                    <img src="${Pressure}" class="dark:filter-white w-8 h-6 mr-2"> <span id="mobile-air-pressure">998 mb</span>
+                    <img loading="lazy" src="${Pressure}" class="dark:filter-white w-8 h-6 mr-2"> <span id="mobile-air-pressure">998 mb</span>
                 </div>
                 <div class="flex font-semibold">
-                    <img src="${WindSpeed}" class="dark:filter-white w-8 h-6 mr-2"> <span id="mobile-wind-speed">9 km/h </span>
+                    <img loading="lazy" src="${WindSpeed}" class="dark:filter-white w-8 h-6 mr-2"> <span id="mobile-wind-speed">9 km/h </span>
                 </div>
             </div>
             <div class="h-[20vh] flex flex-col justify-around items-center">
