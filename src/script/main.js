@@ -5,6 +5,7 @@ import '../Components/desktop-status';
 import '../Components/forecast-list';
 import '../Components/units';
 import '../Components/loading';
+import '../Components/error-toast';
 import 'regenerator-runtime';
 import getWeatherData from './getInitialWeatherData';
 import getWeatherForecast from './getWeatherForecast';
