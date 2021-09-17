@@ -1,11 +1,21 @@
 const { merge } = require('webpack-merge');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const common = require('./webpack.common');
 
 module.exports = merge(common, {
   mode: 'production',
   module: {
     rules: [
+      {
+        test: /\.css$/i,
+        exclude: /node_modules/i,
+        use: [
+          MiniCssExtractPlugin.loader, // 3. Extract CSS into files
+          'css-loader', // 2. Turns css into commonjs
+          'postcss-loader', // 1. Turn Huge Tailwind CSS into small pieces
+        ],
+      },
       {
         test: /\.js$/,
         exclude: /node_modules/,
@@ -20,7 +30,10 @@ module.exports = merge(common, {
       },
     ],
   },
-  plugins: [new CleanWebpackPlugin()],
+  plugins: [
+    new MiniCssExtractPlugin({ filename: '[name].[contentHash].css' }),
+    new CleanWebpackPlugin(),
+  ],
   optimization: {
     splitChunks: {
       chunks: 'async',

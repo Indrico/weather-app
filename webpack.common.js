@@ -4,7 +4,6 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const config = {
   entry: {
     main: './src/index.js',
-    vendor: './src/vendor.js',
   },
   mode: 'development',
   output: {
@@ -19,13 +18,6 @@ const config = {
   ],
   module: {
     rules: [
-      {
-        test: /\.css$/i,
-        exclude: /node_modules/i,
-        use: [
-          'style-loader', 'css-loader', 'postcss-loader',
-        ],
-      },
       {
         test: /\.html$/,
         use: ['html-loader'],
