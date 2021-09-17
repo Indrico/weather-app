@@ -30,17 +30,10 @@ const config = {
       {
         test: /\.(png|jpg|gif|jpeg|svg)$/i,
         exclude: /node_modules/,
-        use: [
-          {
-            loader: 'file-loader',
-            options: {
-              esModule: false,
-              name: '[name].[hash].[ext]',
-              outputPath: 'imgs',
-            },
-          },
-        ],
-        type: 'javascript/auto',
+        type: 'asset/resource',
+        generator: {
+          filename: 'imgs/[name][hash][ext]',
+        },
       },
     ],
   },
