@@ -6,7 +6,7 @@ const config = {
   mode: 'development',
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'bundle.js'
+    filename: 'bundle.[contenthash].js',
   },
   module: {
     rules: [
@@ -14,22 +14,22 @@ const config = {
         test: /\.css$/i,
         exclude: /node_modules/i,
         use: [
-          'style-loader', 'css-loader', 'postcss-loader'
-        ]
+          'style-loader', 'css-loader', 'postcss-loader',
+        ],
       },
       {
         test: /\.(png|jpg|gif|jpeg|svg)$/i,
         exclude: /node_modules/,
         use: 'file-loader',
       },
-    ]
+    ],
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: "./src/index.html",
-      filename: "index.html"
-    })
-  ]
+      template: './src/index.html',
+      filename: 'index.html',
+    }),
+  ],
 };
 
 module.exports = config;
