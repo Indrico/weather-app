@@ -8,6 +8,12 @@ const config = {
     path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.[contenthash].js',
   },
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: './src/index.html',
+      filename: 'index.html',
+    }),
+  ],
   module: {
     rules: [
       {
@@ -18,18 +24,26 @@ const config = {
         ],
       },
       {
+        test: /\.html$/,
+        use: ['html-loader'],
+      },
+      {
         test: /\.(png|jpg|gif|jpeg|svg)$/i,
         exclude: /node_modules/,
-        use: 'file-loader',
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              esModule: false,
+              name: '[name].[hash].[ext]',
+              outputPath: 'imgs',
+            },
+          },
+        ],
+        type: 'javascript/auto',
       },
     ],
   },
-  plugins: [
-    new HtmlWebpackPlugin({
-      template: './src/index.html',
-      filename: 'index.html',
-    }),
-  ],
 };
 
 module.exports = config;
